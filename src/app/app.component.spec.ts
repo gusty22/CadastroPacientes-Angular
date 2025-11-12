@@ -1,29 +1,44 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+describe('Teste do Componente Principal (AppComponent)', () => {
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [AppComponent, ReactiveFormsModule, NoopAnimationsModule]
+    });
   });
 
-  it(`should have as title 'cadastro-pacientes'`, () => {
+  it('deve criar o componente principal sem erros', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('cadastro-pacientes');
+    const componente = fixture.componentInstance;
+    expect(componente).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('deve possuir o título "gestao-pacientes"', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const componente = fixture.componentInstance;
+    // O nome do título foi alterado no novo app.component.ts
+    expect(componente.title).toEqual('gestao-pacientes');
+  });
+
+  it('deve exibir o título correto no elemento h1', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('cadastro-pacientes app is running!');
+    const html = fixture.nativeElement as HTMLElement;
+    // Confirma se o h1 contém o novo texto de cabeçalho
+    expect(html.querySelector('h1')?.textContent)
+      .toContain('Gerenciamento de Pacientes');
   });
+
+  it('deve renderizar o formulário de cadastro no template', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const html = fixture.nativeElement as HTMLElement;
+    const formElement = html.querySelector('form');
+    expect(formElement).not.toBeNull();
+  });
+
 });

@@ -1,0 +1,276 @@
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Container geral */
+.wrapper {
+  background: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 720px;
+  width: 100%;
+}
+
+/* Cabeçalho */
+header h1 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-align: center;
+  color: #1a3e72;
+  margin-bottom: 1.8rem;
+}
+
+/* Formulário */
+form.cadastro-form fieldset {
+  border: 1px solid #d4d9dd;
+  border-radius: 8px;
+  padding: 1.5rem 2rem 2rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+form.cadastro-form legend {
+  font-weight: 600;
+  color: #475569;
+  font-size: 1rem;
+  padding: 0 8px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: #334155;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="date"] {
+  padding: 0.48rem 0.75rem;
+  font-size: 1rem;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+}
+
+.campo input[type="text"]:focus,
+.campo input[type="email"]:focus,
+.campo input[type="date"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+/* Mensagens de erro */
+small.erro {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* Botões */
+.acoes-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.acoes-form button {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.55rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.acoes-form button[type="submit"] {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+.acoes-form button[type="submit"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+}
+
+.acoes-form button[type="submit"]:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  color: #e0e7ff;
+}
+
+.acoes-form button[type="button"] {
+  background-color: #e0e7ff;
+  color: #2563eb;
+  border: 1.5px solid #2563eb;
+}
+
+.acoes-form button[type="button"]:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Mensagens de alerta */
+.alerta {
+  text-align: center;
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.8rem;
+}
+
+.alerta.sucesso {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1.5px solid #10b981;
+}
+
+.alerta.erro {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1.5px solid #ef4444;
+}
+
+/* Linha separadora */
+hr {
+  border: none;
+  border-top: 2px dashed #e2e8f0;
+  margin: 1.5rem 0 2rem 0;
+}
+
+/* Lista de pacientes */
+.lista-pacientes h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Campo de busca */
+.busca {
+  margin-bottom: 1rem;
+}
+
+.busca label {
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.busca input[type="text"] {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  transition: border-color 0.3s ease;
+}
+
+.busca input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+thead {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+}
+
+thead th {
+  padding: 0.75rem 1.2rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+tbody td {
+  padding: 0.7rem 1.2rem;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+/* Botões na tabela */
+.acoes-tabela {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.acoes-tabela button {
+  padding: 0.35rem 0.75rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  font-size: 0.85rem;
+}
+
+.acoes-tabela button.editar {
+  background-color: #fbbf24;
+  color: #92400e;
+}
+
+.acoes-tabela button.editar:hover {
+  background-color: #f59e0b;
+  color: #78350f;
+}
+
+.acoes-tabela button.excluir {
+  background-color: #ef4444;
+  color: white;
+}
+
+.acoes-tabela button.excluir:hover {
+  background-color: #dc2626;
+}
+
+/* Mensagem vazio e loading */
+.vazio, .loading {
+  text-align: center;
+  padding: 1rem;
+  color: #64748b;
+  font-weight: 600;
+}
